@@ -35,6 +35,7 @@
 </script>
 <style>
     .footer{
+        font-family: Helvetica;
         background-color: rgba(0, 0, 46, 0.979);
         display: flex;
         flex-direction: row;
