@@ -1,15 +1,24 @@
+<script>
+    let courses = require('../assets/Cursos.js');
+    export default{
+        name: 'Edit-item',
+        data(){
+            return{
+                courseList: courses,
+            }
+        }
+    }
+</script>
 <template>
     <span class="create">
         <h2>Edit</h2>
         <form class="form">
             <span class="container-form" id="name">
                 <label for="courses">Selecione o Curso:</label>
-                <select name="courses" id="courses">
-                    <option value="c1">Curso1</option>
-                    <option value="c2">Curso2</option>
-                    <option value="c3">Curso3</option>
-                    <option value="c4">Curso4</option>
+                <select v-model="courses" required>
+                    <option v-for="(course, index) in courseList" :key="index">{{course.name}}</option>
                 </select>
+                
             </span>
             <input type="submit" id="course-submit" name="course-submit">
         </form>
@@ -17,11 +26,6 @@
 </template>
 
 
-<script>
-    export default{
-        name: 'Edit-item',
-    }
-</script>
 <style>
     select, option{
         font-family: Helvetica;
